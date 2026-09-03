@@ -7,8 +7,28 @@
     <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="noScrollBody">
+    <%- include('../components/navbar/navbar') %>
     
-    
+    <main class="noScrollMain">
+        <article class="heroContainer">
+            <div class="heroContent">
+                <h1 class="heroFont">BuyTech</h1>
+                <div class="heroButtons">
+                    <button>
+                        <h4>Shop all</h4>
+                    </button>
+                    <button>
+                        <h4>Shop categories</h4>
+                    </button>
+                </div>
+            </div>
+            <div class="heroImage">
+                <img src="/img/hero.jpg" alt="woman looking at phone">
+            </div>
+        </article>
+    </main>
+
+    <%- include('../components/footer/footer') %>
 </body>
 </html>
