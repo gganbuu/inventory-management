@@ -4,18 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "dotenv": "^17.4.2",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-validation": "^4.1.1",
+    "express-validator": "^7.3.2",
     "pg": "^8.23.0",
     "validator": "^13.15.35"
+  },
+  "devDependencies": {
+    "jest": "^30.5.0"
   }
 }
