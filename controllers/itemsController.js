@@ -4,7 +4,7 @@ export async function homePageGet(req,res) {
     res.render("index");
 }
 
-export async function categoriePageGet(req,res) {
+export async function categoriesPageGet(req,res) {
     res.render("categories")
 }
 
