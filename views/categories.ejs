@@ -10,23 +10,25 @@
 <body class="noScrollBody">
     <%- include('../components/navbar/navbar') %>
     
-    <main class="noScrollMain">
-        <article class="heroContainer">
-            <div class="heroContent">
-                <h1 class="heroFont">BuyTech</h1>
-                <div class="heroButtons">
-                    <button>
-                        <h4>Shop all</h4>
-                    </button>
-                    <button>
-                        <h4>Shop categories</h4>
-                    </button>
+    <main class="categoryMain">
+        <section class="categoryContainer">
+            <div class="categorySubContainer">
+                <h1>Devices</h1>
+                <div class="categoryLinks">
+                    <a href="/products?device=laptops">Laptops</a>
+                    <a href="/products?device=phones">Phones</a>
                 </div>
             </div>
-            <div class="heroImage">
-                <img src="/img/hero.jpg" alt="woman looking at phone">
+            <div class="categorySubContainer">
+                <h1>Brands</h1>
+                <div class="categoryLinks">
+                    <a href="/products?brand=Apple">Apple</a>
+                    <a href="/products?brand=Samsung">Samsung</a>
+                    <a href="/products?brand=Microsoft">Microsoft</a>
+                    <a href="/products?brand=Dell">Dell</a>
+                </div>
             </div>
-        </article>
+        </section>
     </main>
 
     <%- include('../components/footer/footer') %>

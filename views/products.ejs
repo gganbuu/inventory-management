@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="scrollBody">
+    <%- include('../components/navbar/navbar') %>
+    
+    <main class="productsMain">
+        <h1>Products</h1>
+        <%- include('../components/filterbar/filterbar') %>
+        <%- include('../components/cardscontainer/cardscontainer') %>
+    </main>
+
+    <%- include('../components/footer/footer') %>
+</body>
+</html>

@@ -7,6 +7,8 @@ itemsRouter.get("/", itemsController.homePageGet)
 
 itemsRouter.get("/categories", itemsController.categoriesPageGet)
 
+itemsRouter.get("/products", itemsController.productsPageGet)
+
 itemsRouter.get("/{*splat}", itemsController.errorPageGet)
 
 
