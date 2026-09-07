@@ -1,12 +1,12 @@
 <!-- need to change to update product prices -->
-<a href="" class="productCard">
-    <img class="productCardImage" src="/img/image.png" alt="apple laptop">
+<a href="/item?name=<%=locals.product.name%>" class="productCard">
+    <img class="productCardImage" src="/img/<%= locals.product.id %>.png" alt="<%= locals.product.category %>">
     <div class="productCardDetails">
         <main class="productCardName">
-            <p>Apple Macbook Pro 13-Inch A18, 256GB/8GB (Pink)</p> 
+            <p><%= locals.product.name %></p> 
         </main>
         <footer class="productCardPrice">
-            <h3>$ 1997</h3>
+            <h3>$ <%= locals.product.price %></h3>
         </footer>
     </div>
 </a>

@@ -1,6 +1,6 @@
 <section class="cardsContainer">
-    <%- include('../card/card') %>
-    <%- include('../card/card') %>
-    <%- include('../card/card') %>  
+    <% products.map(product => { %>
+        <%- include('../card/card', {product: product}) %>
+    <% }) %>
 
 </section>

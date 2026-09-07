@@ -13,7 +13,7 @@
     <main class="productsMain">
         <h1>Products</h1>
         <%- include('../components/filterbar/filterbar') %>
-        <%- include('../components/cardscontainer/cardscontainer') %>
+        <%- include('../components/cardscontainer/cardscontainer', { products: locals.products}) %>
     </main>
 
     <%- include('../components/footer/footer') %>

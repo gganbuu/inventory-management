@@ -107,10 +107,6 @@ body {
 }
 
 /* navigation bar and header */
-header {
-    padding: 1rem 2rem;
-}
-
 a { 
     color: var(--gray-950);
     cursor: pointer;
@@ -118,6 +114,7 @@ a {
 }
 
 nav {
+    padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -230,7 +227,7 @@ a h4 {
     gap: 1rem;
 }
 
-/* product page */
+/* products page */
 .productsMain {
     margin: auto;
     flex: 1;
@@ -264,7 +261,7 @@ h1 {
 .cardsContainer {
     grid-area: products;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
     gap: 1rem;
 }
 
@@ -292,8 +289,14 @@ h1 {
     justify-items: end;
 }
 
-
-
+/* viewProduct page */
+.itemMain {
+    margin: auto;
+    padding: 0rem 2rem;
+    width: clamp(700px, 100%, 1400px);
+    display: flex;
+    flex-direction: row;
+}
 
 
 
@@ -306,7 +309,7 @@ h1 {
 
 
 /* footer */
-footer {
+.pageFooter {
     text-align: center;
     padding: 1rem;
 }
