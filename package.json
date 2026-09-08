@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.hjs",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "seed": "node db/dbseed.js",
+    "start": "node --watch app.js"
   },
   "keywords": [],
   "author": "",

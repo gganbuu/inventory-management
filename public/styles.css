@@ -252,7 +252,8 @@ h1 {
     grid-area: filterbar;
     padding: 1rem;
     border-radius: 10px;
-    background-color: var(--gray-300)
+    background-color: var(--gray-300);
+
 }
 
 .filterBarContainer form {
@@ -263,7 +264,7 @@ h1 {
 .cardsContainer {
     grid-area: products;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     gap: 1rem;
 }
 

@@ -1,39 +1,40 @@
 <aside class="filterBarContainer">
-    <form action="products" method="get">
+    <% const { devices = [], brand = [], priceFrom = "", priceTo = "" } = locals.search || {} %>
+    <form action="/products" method="get">
         <h2>Devices</h2>
         <label for="phones">
-            <input type="checkbox" id="phones" value="phones" name="devices"/>
+            <input type="checkbox" id="phones" value="phones" name="devices" <%= devices.includes("phones") ? "checked": ""%> />
             Phones
         </label>
         <label for="laptops">
-            <input type="checkbox" id="laptops" value="laptops" name="devices"/>
+            <input type="checkbox" id="laptops" value="laptops" name="devices" <%= devices.includes("laptops") ? "checked": ""%> />
             Laptops
         </label>
 
         <h2>Brand</h2>
         <label for="apple">
-            <input type="checkbox" id="apple" value="Apple" name="brand"/>
+            <input type="checkbox" id="apple" value="Apple" name="brand" <%= brand.includes("Apple") ? "checked": ""%>/>
             Apple
         </label>
         <label for="dell">
-            <input type="checkbox" id="dell" value="Dell" name="brand"/>
+            <input type="checkbox" id="dell" value="Dell" name="brand" <%= brand.includes("Dell") ? "checked": ""%>/>
             Dell
         </label>
         <label for="samsung">
-            <input type="checkbox" id="samsung" value="Samsung" name="brand"/>
+            <input type="checkbox" id="samsung" value="Samsung" name="brand" <%= brand.includes("Samsung") ? "checked": ""%>/>
             Samsung
         </label>
         
         <label for="microsoft">
-            <input type="checkbox" id="microsoft" value="Microsoft" name="brand"/>
+            <input type="checkbox" id="microsoft" value="Microsoft" name="brand" <%= brand.includes("Microsoft") ? "checked": ""%>/>
             Microsoft
         </label>
 
         <h2>Price</h2>
         <label for="priceFrom">From</label>
-        <input type="number" id="priceFrom" value="priceFrom" name="priceFrom"/>
+        <input type="number" step="0.01" id="priceFrom" value="<%= priceFrom %>" name="priceFrom"/>
         <label for="priceTo">To</label>
-        <input type="number" id="priceTo" value="priceTo" name="priceTo"/>
+        <input type="number" step="0.01" id="priceTo" value="<%= priceTo %>" name="priceTo"/>
 
         <button>Filter</button>
     </form>
