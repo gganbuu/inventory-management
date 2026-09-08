@@ -11,7 +11,13 @@ export async function categoriesPageGet(req,res) {
 }
 
 export async function productsPageGet(req,res) {
-    const products = await db.productsPageGet()
+    let devices = req.query.devices
+    let brand = req.query.brand
+    // need to perform some validation on priceFrom and priceTo
+    let priceFrom = req.query.priceFrom
+    let priceTo = req.query.priceTo
+    console.log({brand, devices, priceFrom, priceTo})
+    const products = await db.productsPageGet({brand, devices, priceFrom, priceTo})
     res.render("products", { products: products })
 }
 

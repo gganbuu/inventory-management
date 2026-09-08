@@ -1,39 +1,39 @@
 <aside class="filterBarContainer">
-    <form action="GET">
-        <h2>Type</h2>
+    <form action="products" method="get">
+        <h2>Devices</h2>
         <label for="phones">
-            <input type="checkbox" name="phones"/>
+            <input type="checkbox" id="phones" value="phones" name="devices"/>
             Phones
         </label>
-        <label for="devices">
-            <input type="checkbox" name="devices"/>
+        <label for="laptops">
+            <input type="checkbox" id="laptops" value="laptops" name="devices"/>
             Laptops
         </label>
 
         <h2>Brand</h2>
         <label for="apple">
-            <input type="checkbox" name="apple"/>
+            <input type="checkbox" id="apple" value="Apple" name="brand"/>
             Apple
         </label>
         <label for="dell">
-            <input type="checkbox" name="dell"/>
+            <input type="checkbox" id="dell" value="Dell" name="brand"/>
             Dell
         </label>
         <label for="samsung">
-            <input type="checkbox" name="samsung"/>
+            <input type="checkbox" id="samsung" value="Samsung" name="brand"/>
             Samsung
         </label>
         
         <label for="microsoft">
-            <input type="checkbox" name="microsoft"/>
+            <input type="checkbox" id="microsoft" value="Microsoft" name="brand"/>
             Microsoft
         </label>
 
         <h2>Price</h2>
         <label for="priceFrom">From</label>
-        <input type="number" name="priceFrom"/>
+        <input type="number" id="priceFrom" value="priceFrom" name="priceFrom"/>
         <label for="priceTo">To</label>
-        <input type="number" name="priceTo"/>
+        <input type="number" id="priceTo" value="priceTo" name="priceTo"/>
 
         <button>Filter</button>
     </form>
