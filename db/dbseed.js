@@ -21,7 +21,7 @@ const SQL = `
 CREATE TABLE IF NOT EXISTS inventory (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name TEXT NOT NULL,
-    category TEXT NOT NULL,
+    devices TEXT NOT NULL,
     price NUMERIC(10, 2) NOT NULL,
     stock INTEGER NOT NULL,
     colour TEXT NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS inventory (
     description TEXT NOT NULL
 );
 
-INSERT INTO inventory (name, category, price, stock, colour, brand, description)
+INSERT INTO inventory (name, devices, price, stock, colour, brand, description)
 VALUES
     (
         'Apple Macbook Pro 13-Inch A18, 256GB/8GB (Pink)',
