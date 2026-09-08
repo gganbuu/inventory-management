@@ -15,12 +15,12 @@
             <img src="/img/<%= locals.item.id %>.png" alt="<%= locals.item.category %>">
         </article>
         <article class="itemDetails">
-            <header class="itemDetailsBody"> 
-                <%- include('../components/infobubble/infobubble', { input: locals.item.category}) %>
-                <%- include('../components/infobubble/infobubble', { input: locals.item.brand}) %>
-            </header>
             <main class="itemDetailsMain">
-                <h1> <%= locals.item.name %></h1>
+                <div class="itemDetailsHeader">
+                    <%- include('../components/infobubble/infobubble', { input: locals.item.category}) %>
+                    <%- include('../components/infobubble/infobubble', { input: locals.item.brand}) %>
+                </div>
+                <h1><%= locals.item.name %></h1>
                 <p> <%= locals.item.description %></p>
             </main>
             <footer class="itemDetailsFooter"> 
