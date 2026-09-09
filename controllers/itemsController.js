@@ -19,13 +19,13 @@ export async function productsPageGet(req,res) {
     const priceTo = req.query.priceTo ?? "";
 
     const search = {devices, brand, priceFrom, priceTo}
-    console.log({...search})
 
-    
+    const filters = await db.productFiltersGet()
     const products = await db.productsPageGet({...search})
+    console.log(products)
     
     
-    res.render("products", { products: products, search: {...search}})
+    res.render("products", { products: products, search: {...search}, filters: filters})
 }
 
 export async function itemPageGet(req, res) {

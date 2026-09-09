@@ -1,6 +1,14 @@
 import { pool } from './pool.js'
 
 
+export async function productFiltersGet() {
+    const devices = await pool.query('SELECT DISTINCT devices FROM inventory;');
+    const brand = await pool.query('SELECT DISTINCT brand FROM inventory;');
+    const devicesArray = devices.rows.flatMap(obj => Object.values(obj))
+    const brandArray = brand.rows.flatMap(obj => Object.values(obj))
+    return { devices: devicesArray, brand: brandArray }
+}
+
 export async function productsPageGet({devices, brand, priceFrom, priceTo} = {}) {
     const clauses = [];
     const values = [];
@@ -35,6 +43,6 @@ export async function productsPageGet({devices, brand, priceFrom, priceTo} = {})
 }
 
 export async function itemPageGet(name) {
-    const { rows } = await pool.query("SELECT * FROM inventory WHERE name = $1", [name])
+    const { rows } = await pool.query("SELECT * FROM inventory WHERE name = $1;", [name])
     return rows[0];
 }

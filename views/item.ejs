@@ -17,8 +17,8 @@
         <article class="itemDetails">
             <main class="itemDetailsMain">
                 <div class="itemDetailsHeader">
-                    <%- include('../components/infobubble/infobubble', { input: locals.item.devices}) %>
-                    <%- include('../components/infobubble/infobubble', { input: locals.item.brand}) %>
+                    <%- include('../components/infobubble/infobubble', { input: locals.item.devices, category: 'devices'}) %>
+                    <%- include('../components/infobubble/infobubble', { input: locals.item.brand, category: 'brand'}) %>
                 </div>
                 <h1><%= locals.item.name %></h1>
                 <p> <%= locals.item.description %></p>

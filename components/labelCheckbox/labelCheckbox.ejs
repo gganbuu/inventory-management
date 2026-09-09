@@ -1,0 +1,7 @@
+<% const label = locals.label %>
+<% const checked = locals.checked %>
+<% const filter = locals.filter %>
+<label for="<%= label %>">
+    <input type="checkbox" id="<%= label %>" value="<%= label %>" name="<%= String(filter) %>" <%= checked.includes(label) ? "checked": "" %> />
+    <%= label %>
+</label>

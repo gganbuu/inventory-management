@@ -1,3 +1,5 @@
-<a class="infoBubble" href="">
+<% const href = `/products?${locals.category}=${locals.input}` %>
+
+<a class="infoBubble" href="<%= href %>">
     <%= locals.input %>
 </a>
