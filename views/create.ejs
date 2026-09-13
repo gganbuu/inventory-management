@@ -9,8 +9,47 @@
 </head>
 <body class="noScrollBody">
     <%- include('../components/adminnavbar/adminnavbar') %>
-    <main class="noScrollMain">
-        <p>Create page entered (protected)</p>
+    <main class="loginMain">
+        <form action="/create" method="POST">
+            <header class="adminLoginContainerHeader">
+                Create Product
+            </header>
+            <main class="adminLoginContainerMain">
+                <label for="name">
+                    Name
+                    <input type="text" id="name" name="name"/>
+                </label>
+                <label for="devices"> 
+                    Devices
+                    <input type="text" id="devices" name="devices"/>
+                </label>
+
+                <div>
+                    <label for="price">
+                        Price
+                        <input type="number" id="price" name="price"/>
+                    </label>
+                    <label for="stock">
+                        Stock
+                        <input type="number" id="stock" name="stock"/>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="brand">
+                        Brand
+                        <input type="text" id="brand" name="brand"/>
+                    </label>
+                    <label for="colour">
+                        Colour
+                        <input type="text" id="colour" name="colour"/>
+                    </label>
+                </div>
+            </main>
+            <footer>
+                <button>submit</button>
+            </footer>
+        </form>
     </main>
     <%- include('../components/footer/footer') %>
 </body>

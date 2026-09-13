@@ -419,6 +419,11 @@ h1 {
     padding: 1rem;
 }
 
+.adminLoginErrorText {
+    display: flex;
+    color: red;
+}
+
 /* error page */
 .errorPageNotFound {
     margin: auto;
