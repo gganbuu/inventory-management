@@ -1,6 +1,6 @@
+<% const { devices = [], brand = [], priceFrom = "", priceTo = "" } = locals.search || {} %>
+
 <aside class="filterBarContainer">
-    
-    <% const { devices = [], brand = [], priceFrom = "", priceTo = "" } = locals.search || {} %>
     <form action="/products" method="get">
         <h2>Devices</h2>
         <% for (const deviceName of locals.filters.devices) { %>

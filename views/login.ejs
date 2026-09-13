@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+    <title>login page</title>
+</head>
+<body class="noScrollBody">
+    <%- include('../components/navbar/navbar') %>
+
+    <main class="loginMain">
+        <form class="adminLoginContainer" method="POST" action="/login">
+            <header class="adminLoginContainerHeader">
+                <h3>Enter credentials</h3>
+                <p class="adminLoginErrorText">
+                    <%= locals.message%>
+                </p>    
+            </header>
+            <main class="adminLoginContainerMain">
+                <label for="username"> Username
+                    <input type="text" id="username" name="username"/>
+                </label>
+                <label for="password"> Password
+                    <input type="password" id="password" name="password"/>
+                </label>
+            </main>
+            <footer class="adminLoginContainerFooter">
+                <button type="submit">Login</button>
+            </footer>
+        </form>
+    </main>
+    
+
+    <%- include('../components/footer/footer') %>
+</body>
+</html>

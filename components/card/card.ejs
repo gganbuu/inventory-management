@@ -1,12 +1,12 @@
 <!-- need to change to update product prices -->
+
 <a href="/item?name=<%=locals.product.name%>" class="productCard">
-    <img class="productCardImage" src="/img/<%= locals.product.id %>.png" alt="<%= locals.product.category %>">
-    <div class="productCardDetails">
-        <main class="productCardName">
-            <p><%= locals.product.name %></p> 
-        </main>
-        <footer class="productCardPrice">
-            <h3>$ <%= locals.product.price %></h3>
-        </footer>
-    </div>
+    <main class="productCardName">
+        <img class="productCardImage" src="/img/<%= locals.product.id %>.png" alt="<%= locals.product.category %>">
+        <p><%= locals.product.name %></p>
+    </main>
+    <footer class="productCardPrice">
+        <h3>$ <%= locals.product.price %></h3>
+    </footer>
+    
 </a>

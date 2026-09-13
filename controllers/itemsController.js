@@ -1,5 +1,5 @@
 import { body, validationResult, matchedData } from 'express-validator';
-import * as db from '../db/queries.js'
+import * as db from '../db/itemQueries.js'
 
 const toArray = (v) => (v === undefined ? [] : [].concat(v))
 
@@ -22,8 +22,6 @@ export async function productsPageGet(req,res) {
 
     const filters = await db.productFiltersGet()
     const products = await db.productsPageGet({...search})
-    console.log(products)
-    
     
     res.render("products", { products: products, search: {...search}, filters: filters})
 }

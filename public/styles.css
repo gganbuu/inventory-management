@@ -115,6 +115,10 @@ a {
     text-decoration: none;
 }
 
+.navHeader {
+    background-color: var(--gray-400);
+}
+
 nav {
     padding: 1rem 2rem;
     display: flex;
@@ -122,7 +126,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: auto;
-
     width: clamp(700px, 100%, 1400px);
 }
 
@@ -135,12 +138,15 @@ nav div {
 .scrollBody {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    gap: 1rem;
 }
 
 .noScrollBody {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    gap: 1rem;
 }
 
 .noScrollMain {
@@ -195,7 +201,7 @@ a h4 {
 
 .heroImage {
     display: flex;
-    width: 600px;
+    width: 500px;
     height: auto;
     border-radius: 10px;
 }
@@ -253,6 +259,7 @@ h1 {
     padding: 1rem;
     border-radius: 10px;
     background-color: var(--gray-300);
+    align-self: start;
 
 }
 
@@ -261,36 +268,50 @@ h1 {
     flex-direction: column;
 }
 
+.filterBarContainer input[type=checkbox] {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.checkboxLabel {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
 .cardsContainer {
     grid-area: products;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    grid-template-columns: repeat(auto-fill, max(250px, 250px));
+    grid-template-rows: 416px;
     gap: 1rem;
 }
 
 .productCard {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: var(--gray-300);
-    border-radius: 10px; 
+    border-radius: 10px;
+    height: 416px;
 }
 
 .productCardImage {
     border-radius: 10px 10px 0px 0px; 
 }
 
-.productCardDetails {
-    padding: 1rem;
-    border-radius: 0px 0px 10px 10px;
-}
-
 .productCardName p {
     font-size: 0.9rem;
+    padding: 1rem;
+}
+.productCardPrice {
+    align-self: end;
 }
 
-.productCardDetails {
-    justify-items: end;
+.productCardPrice h3 {
+    padding: 1rem;
 }
+
 
 /* item page page */
 .itemMain {
@@ -349,6 +370,9 @@ h1 {
 .itemDetailsMain p {
     line-height: 3;
 }
+.itemPrice {
+    align-self: end;
+}
 
 .itemDetailsFooter {
     display: flex;
@@ -361,6 +385,39 @@ h1 {
 }
 
 
+/* login page */
+.loginMain {
+    flex: 1;
+    display: flex;
+    margin: auto;
+    width: clamp(700px, 100%, 1400px);
+    justify-content: center;
+}
+
+.adminLoginContainer {
+    width: 500px;
+}
+
+.adminLoginContainerHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.adminLoginContainerFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.adminLoginContainerMain > label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
 
 /* error page */
 .errorPageNotFound {
@@ -368,9 +425,17 @@ h1 {
 }
 
 
-
 /* footer */
 .pageFooter {
+    background-color: var(--gray-400);
     text-align: center;
     padding: 1rem;
 }
+
+
+
+/* helper */
+.hidden {
+    visibility: hidden;
+}
+

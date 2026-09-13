@@ -87,6 +87,12 @@ VALUES
         'Dell',
         'Stay powered all day with energy-efficient battery management and ExpressCharge support, giving you an 80% charge in 1 hour. Write and calculate quickly with roomy keypads, separate numeric keypad and calculator hotkey. Keep your wrists comfortable with lifted hinges that provide an ergonomic typing angle. Adaptive thermals keep your PC running efficiently, whether at your desk or working from your lap. Your Dell 15 intelligently adjusts its power and thermals to keep it running smoothly.'
     );
+
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+)
 `
 main().catch((err) => {
     console.error(err);

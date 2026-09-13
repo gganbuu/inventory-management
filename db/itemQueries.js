@@ -1,6 +1,5 @@
 import { pool } from './pool.js'
 
-
 export async function productFiltersGet() {
     const devices = await pool.query('SELECT DISTINCT devices FROM inventory;');
     const brand = await pool.query('SELECT DISTINCT brand FROM inventory;');
