@@ -41,6 +41,13 @@ export async function productsPageGet({devices, brand, priceFrom, priceTo} = {})
     return rows;
 }
 
+export async function createItem({name, devices, price, stock, brand, colour, description}) {
+    await pool.query(
+        "INSERT INTO inventory (name, devices, price, stock, colour, brand, description) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+        [name, devices, price, stock, colour, brand, description]
+    )
+}
+
 export async function itemPageGet(name) {
     const { rows } = await pool.query("SELECT * FROM inventory WHERE name = $1;", [name])
     return rows[0];

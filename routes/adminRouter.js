@@ -13,6 +13,9 @@ adminRouter.get("/logout", adminController.logoutGet)
 
 adminRouter.get("/create", adminController.isAuthorised, adminController.createPageGet)
 
+adminRouter.post("/create", adminController.isAuthorised, adminController.createPagePost)
+
+adminRouter.get("/editdelete", adminController.isAuthorised, adminController.editDeletePageGet)
 
 //sign up routers disabled 
 // adminRouter.get("/signup", adminController.signUpGet)

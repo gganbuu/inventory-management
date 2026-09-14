@@ -159,7 +159,6 @@ nav div {
 }
 
 
-
 /* hero container */
 .heroContainer {
     display: flex;
@@ -421,8 +420,24 @@ h1 {
 
 .adminLoginErrorText {
     display: flex;
+    flex-direction: column;
     color: red;
 }
+
+/* create product */
+.createTwoColumnContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.createTwoColumnContainer > label {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 /* error page */
 .errorPageNotFound {
@@ -433,7 +448,9 @@ h1 {
 /* footer */
 .pageFooter {
     background-color: var(--gray-400);
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 1rem;
 }
 

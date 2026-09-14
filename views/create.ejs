@@ -1,3 +1,5 @@
+<% const errors = locals.errors?.map(error => error.msg) || []; %>
+<% const {name, devices, price, stock, colour, brand, description} = locals.pastValues || {} %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,41 +14,52 @@
     <main class="loginMain">
         <form action="/create" method="POST">
             <header class="adminLoginContainerHeader">
-                Create Product
+                <h3>Create Product</h3>
+                <ul class="adminLoginErrorText">
+                    <% errors.forEach((error) => {%>
+                        <li> <%=error%> </li>
+                    <%}) %>
+                </ul>
             </header>
             <main class="adminLoginContainerMain">
                 <label for="name">
                     Name
-                    <input type="text" id="name" name="name"/>
+                    <input type="text" id="name" name="name" value='<%= name %>' required/>
                 </label>
                 <label for="devices"> 
                     Devices
-                    <input type="text" id="devices" name="devices"/>
+                    <input type="text" id="devices" name="devices" value='<%= devices %>' required/>
                 </label>
 
-                <div>
+                <div class="createTwoColumnContainer">
                     <label for="price">
                         Price
-                        <input type="number" id="price" name="price"/>
+                        <input type="number" id="price" name="price" step="0.01" value='<%= price %>' required/>
                     </label>
                     <label for="stock">
                         Stock
-                        <input type="number" id="stock" name="stock"/>
+                        <input type="number" id="stock" name="stock" value='<%= stock %>' required/>
                     </label>
                 </div>
 
-                <div>
+                <div class="createTwoColumnContainer">
                     <label for="brand">
                         Brand
-                        <input type="text" id="brand" name="brand"/>
+                        <input type="text" id="brand" name="brand" value='<%= brand %>' required/>
                     </label>
                     <label for="colour">
                         Colour
-                        <input type="text" id="colour" name="colour"/>
+                        <input type="text" id="colour" name="colour" value='<%= colour %>' required/>
                     </label>
                 </div>
+
+                <label for="description"> 
+                    Description
+                    <textarea id="description" name="description" value='<%= description %>' required></textarea>
+                </label>
+
             </main>
-            <footer>
+            <footer class="adminLoginContainerFooter">
                 <button>submit</button>
             </footer>
         </form>

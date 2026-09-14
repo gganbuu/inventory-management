@@ -1,11 +1,12 @@
 import { body, validationResult, matchedData } from 'express-validator';
 import * as db from '../db/itemQueries.js'
 
+
 const toArray = (v) => (v === undefined ? [] : [].concat(v))
 
 export async function homePageGet(req,res) {
     res.render("index");
-}
+}   
 
 export async function categoriesPageGet(req,res) {
     res.render("categories")
