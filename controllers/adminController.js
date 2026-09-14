@@ -70,6 +70,7 @@ export function createPageGet(req, res) {
 
 export async function editDeletePageGet(req, res) {
     const products = await itemdb.productsPageGet()
+    console.log(products)
     res.render("editdelete", {products: products})
 }
 

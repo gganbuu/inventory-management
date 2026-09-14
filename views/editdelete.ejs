@@ -1,3 +1,5 @@
+<% const products = locals.products%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +11,35 @@
 </head>
 <body class="noScrollBody">
     <%- include('../components/adminnavbar/adminnavbar') %>
-    <main class="productsMain">
-        <header class="">
-            <h1>Create Edit Page</h1>    
+    <main class="editDeleteMain">
+        <header class="editDeleteHeading">
+            <h2>Edit/Delete</h2>    
         </header>
-        <main>
+        <main class="editDeleteTable">
+            <h3>id</h3>
+            <h3>name</h3>
+            <h3>devices</h3>
+            <h3>stock</h3>
+            <h3>colour</h3>
+            <h3>price</h3>
+            <h3>brand</h3>
+            <h3></h3>
+
+            <% products.forEach(product => { %>
+               <p><%- product.id %></p>
+               <p><%- product.name %></p>
+               <p><%- product.devices %></p>
+               <p><%- product.stock %></p>
+               <p><%- product.colour %></p>
+               <p>$ <%- product.price %></p>
+               <p><%- product.brand %></p>
+               <div>
+                   <button>edit</button>
+                   <button>delete</button>
+               </div>
+            <% }) %>
+ 
+            
         </main>
         <footer>
         </footer>

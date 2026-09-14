@@ -437,7 +437,19 @@ h1 {
     flex-direction: column;
 }
 
+/* create edit page */
+.editDeleteMain {
+    flex: 1;
+    margin: auto;
+    width: clamp(700px, 100%, 1400px);
+    padding: 2rem;
+}
 
+.editDeleteTable {
+    display: grid;
+    grid-template-columns: 0.2fr 5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+}
 
 /* error page */
 .errorPageNotFound {
@@ -448,6 +460,12 @@ h1 {
 /* footer */
 .pageFooter {
     background-color: var(--gray-400);
+}
+
+.pageFooterDiv {
+    margin: auto;
+    width: clamp(700px, 100%, 1400px);
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
