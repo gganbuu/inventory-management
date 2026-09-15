@@ -1,11 +1,10 @@
 
 import 'dotenv/config'
-import { body, validationResult } from 'express-validator'
 import express from 'express'
 import path from 'node:path'
 import session from "express-session";
 import passport from "passport";
-import './db/passport.js';
+import configurePassport from "./config/passport.js";
 
 import connectPgSimple from 'connect-pg-simple';
 import { pool } from './db/pool.js';
@@ -42,6 +41,7 @@ app.use(session({
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
 }));
 
+configurePassport(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
