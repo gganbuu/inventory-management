@@ -447,8 +447,23 @@ h1 {
 
 .editDeleteTable {
     display: grid;
-    grid-template-columns: 0.2fr 5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.2fr 5fr 1fr 0.2fr 0.2fr 1fr 1fr 1fr;
 
+}
+.editDeleteMain h3 {
+    display: flex;
+    padding: 1rem;
+}
+
+.editDeleteMain p, .editDeleteMain div {
+    display: flex;
+    padding: 1rem;
+    background-color: grey;
+} 
+
+.editDeleteMain div {
+    align-items: center;
+    gap: 1rem;
 }
 
 /* error page */

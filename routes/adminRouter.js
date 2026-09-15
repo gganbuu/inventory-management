@@ -17,6 +17,10 @@ adminRouter.post("/create", adminController.isAuthorised, adminController.create
 
 adminRouter.get("/editdelete", adminController.isAuthorised, adminController.editDeletePageGet)
 
+adminRouter.get("/edit/:id", adminController.isAuthorised, adminController.editPageGet)
+
+adminRouter.post("/edit/:id", adminController.isAuthorised, adminController.editPagePost)
+
 //sign up routers disabled 
 // adminRouter.get("/signup", adminController.signUpGet)
 // adminRouter.post("/signup", adminController.signUpPost)

@@ -34,7 +34,7 @@
                <p>$ <%- product.price %></p>
                <p><%- product.brand %></p>
                <div>
-                   <button>edit</button>
+                   <a class="editButton" href="/edit/<%= product.id%>">edit</a>
                    <button>delete</button>
                </div>
             <% }) %>
@@ -47,3 +47,7 @@
     <%- include('../components/footer/footer') %>
 </body>
 </html>
+
+<script>
+
+</script>

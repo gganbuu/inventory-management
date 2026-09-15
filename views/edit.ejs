@@ -1,0 +1,71 @@
+<% const errors = locals.errors?.map(error => error.msg) || []; %>
+<% const {name, devices, price, stock, colour, brand, description} = locals.currentValues || {} %>
+<% const id = locals.id %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+    <title>edit</title>
+</head>
+<body class="noScrollBody">
+    <%- include('../components/adminnavbar/adminnavbar') %>
+    <main class="loginMain">
+        <form action="/edit/<%= id %>" method="POST">
+            <header class="adminLoginContainerHeader">
+                <h3>Edit Product</h3>
+                <ul class="adminLoginErrorText">
+                    <% errors.forEach((error) => {%>
+                        <li> <%=error%> </li>
+                    <%}) %>
+                </ul>
+            </header>
+            <main class="adminLoginContainerMain">
+                <label for="name">
+                    Name
+                    <input type="text" id="name" name="name" value='<%= name %>' required/>
+                </label>
+                <label for="devices"> 
+                    Devices
+                    <input type="text" id="devices" name="devices" value='<%= devices %>' required/>
+                </label>
+
+                <div class="createTwoColumnContainer">
+                    <label for="price">
+                        Price
+                        <input type="number" id="price" name="price" step="0.01" value='<%= price %>' required/>
+                    </label>
+                    <label for="stock">
+                        Stock
+                        <input type="number" id="stock" name="stock" value='<%= stock %>' required/>
+                    </label>
+                </div>
+
+                <div class="createTwoColumnContainer">
+                    <label for="brand">
+                        Brand
+                        <input type="text" id="brand" name="brand" value='<%= brand %>' required/>
+                    </label>
+                    <label for="colour">
+                        Colour
+                        <input type="text" id="colour" name="colour" value='<%= colour %>' required/>
+                    </label>
+                </div>
+
+                <label for="description"> 
+                    Description
+                    <textarea id="description" name="description" required><%= description %></textarea>
+                </label>
+
+            </main>
+            <footer class="adminLoginContainerFooter">
+                <a href="/editdelete">back</a>
+                <button type="submit">edit product</button>
+            </footer>
+        </form>
+    </main>
+    <%- include('../components/footer/footer') %>
+</body>
+</html>

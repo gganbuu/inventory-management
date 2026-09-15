@@ -70,9 +70,42 @@ export function createPageGet(req, res) {
 
 export async function editDeletePageGet(req, res) {
     const products = await itemdb.productsPageGet()
-    console.log(products)
     res.render("editdelete", {products: products})
 }
+
+export async function editPageGet(req, res) {
+    const id = req.params.id
+    const item = await itemdb.editPageGet(id);
+    console.log(item);
+    res.render("edit", { currentValues: item, id: id} )
+}
+
+export const editPagePost = [
+    validateCreatePost,
+    async (req, res) => {
+        const errors = validationResult(req);
+        const id = req.params.id;
+        if (!errors.isEmpty()) {   
+            const currentValues = { 
+                name: req.body.name, 
+                devices: req.body.devices,
+                price: req.body.price,
+                stock: req.body.stock,
+                colour: req.body.colour,
+                brand: req.body.brand,
+                description: req.body.description
+            };
+            return res.render("edit", {
+                errors: errors.array(),
+                currentValues: currentValues,
+                id: id,
+            });
+        }
+        const {name, devices, price, stock, colour, brand, description} = matchedData(req);
+        await itemdb.editItemPost({id, name, devices, price, stock, colour, brand, description});
+        res.redirect('/editdelete');
+    }
+]
 
 export function isAuthorised(req, res, next) {
     if (req.isAuthenticated()) {
