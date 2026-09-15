@@ -35,7 +35,10 @@
                <p><%- product.brand %></p>
                <div>
                    <a class="editButton" href="/edit/<%= product.id%>">edit</a>
-                   <button>delete</button>
+                   
+                   <form action="/delete/<%- product.id %>" method="POST">
+                        <button type="submit">delete</button>
+                   </form>
                </div>
             <% }) %>
  

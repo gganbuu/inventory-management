@@ -62,3 +62,7 @@ export async function editItemPost({id, name, devices, price, stock, colour, bra
     const queryParams = [name, devices, price, stock, colour, brand, description, id]
     await pool.query("UPDATE inventory SET name = $1, devices = $2, price = $3, stock = $4, colour = $5, brand = $6, description = $7 WHERE id = $8", queryParams)
 }
+    
+export async function deleteItemPost(id) {
+    pool.query("DELETE FROM inventory WHERE id = $1", [id])
+}

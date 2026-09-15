@@ -29,7 +29,7 @@ export async function loginGet(req,res) {
 
 
 export const loginPost = passport.authenticate("local", {
-        successRedirect: "/create",
+        successRedirect: "/editdelete",
         failureRedirect: "/login",
         failureMessage: true,
     });
@@ -106,6 +106,11 @@ export const editPagePost = [
         res.redirect('/editdelete');
     }
 ]
+
+export async function deletePagePost(req, res) {
+    await itemdb.deleteItemPost(req.params.id);
+    res.redirect('/editdelete')
+}
 
 export function isAuthorised(req, res, next) {
     if (req.isAuthenticated()) {
