@@ -24,8 +24,8 @@ adminRouter.post("/edit/:id", adminController.isAuthorised, adminController.edit
 adminRouter.post("/delete/:id", adminController.isAuthorised, adminController.deletePagePost)
 
 // sign up routers disabled 
-adminRouter.get("/signup", adminController.signUpGet)
-adminRouter.post("/signup", adminController.signUpPost)
+adminRouter.get("/signup", adminController.isAuthorised, adminController.signUpGet)
+adminRouter.post("/signup", adminController.isAuthorised, adminController.signUpPost)
 
 
 export default adminRouter;
