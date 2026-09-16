@@ -136,7 +136,8 @@ export async function signUpGet(req,res) {
 export async function signUpPost(req,res) {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password,10)
-        await db.signUpPost(req.body.username, hashedPassword)
+        await userdb.signUpPost(req.body.username, hashedPassword)
+        res.redirect("/login")
     } catch (error) {
         console.error(error);
         next(error);
