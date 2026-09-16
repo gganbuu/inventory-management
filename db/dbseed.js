@@ -1,4 +1,4 @@
-import { Client}  from 'pg';
+import { Client }  from 'pg';
 import "dotenv/config";
 
 async function main() {
@@ -8,7 +8,8 @@ async function main() {
         user: process.env.DB_USER,
         database: process.env.DB_DB,
         password: process.env.DB_PASSWORD,
-        port: process.env.DB_PORT
+        port: process.env.DB_PORT,
+        ssl: process.env.DB_SSL === "true",
     })
 
     await client.connect();

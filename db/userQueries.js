@@ -5,11 +5,6 @@ export async function signUpPost(username, passwordHash) {
     await pool.query("INSERT INTO users (username, password) VALUES ($1, $2)", [username, passwordHash]);
 }
 
-// export async function getUserUsername(username) {
-//     const { rows } = await pool.query("SELECT * FROM users WHERE username = $1", [username]);
-//     const user = rows[0];
-//     return user;
-// }
 
 export async function findUserByUsernameWithHash(username) {
     const { rows } = await pool.query(

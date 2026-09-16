@@ -129,16 +129,16 @@ export async function logoutGet(req,res) {
 }
 
 
-// export async function signUpGet(req,res) {
-//     res.render('signup')
-// }
+export async function signUpGet(req,res) {
+    res.render('signup')
+}
 
-// export async function signUpPost(req,res) {
-//     try {
-//         const hashedPassword = await bcrypt.hash(req.body.password,10)
-//         await db.signUpPost(req.body.username, hashedPassword)
-//     } catch (error) {
-//         console.error(error);
-//         next(error);
-//     }
-// }
+export async function signUpPost(req,res) {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password,10)
+        await db.signUpPost(req.body.username, hashedPassword)
+    } catch (error) {
+        console.error(error);
+        next(error);
+    }
+}
